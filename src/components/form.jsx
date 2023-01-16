@@ -8,11 +8,11 @@ const Form = () => {
     const [confirmPassword, setConfirmPassword] = useState('');
     const [users, setUsers] = useState([]);
     // conditionals--error messages
-    const [firstNameErrors, setFirstNameErrors] = useState('');
-    const [lastNameErrors, setLastNameErrors] = useState('');
-    const [emailErrors, setEmailErrors] = useState('');
-    const [passwordErrors, setPasswordErrors] = useState('');
-    const [confirmPasswordErrors, setConfirmPasswordErrors] = useState('');
+    const [firstNameErrors, setFirstNameErrors] = useState(null);
+    const [lastNameErrors, setLastNameErrors] = useState(null);
+    const [emailErrors, setEmailErrors] = useState(null);
+    const [passwordErrors, setPasswordErrors] = useState(null);
+    const [confirmPasswordErrors, setConfirmPasswordErrors] = useState(null);
 
     const [hasBeenSubmitted, setHasBeenSubmitted] = useState(false);
 
@@ -70,12 +70,6 @@ const Form = () => {
         }
     }
 
-    // const passwordMatch = (e) => {
-    //     setPassword(e.target.value);
-    //     if (e.target.value !== confirmPassword(e.target.value))
-    //         setPasswordErrors("Passwords must match.")
-    // }
-
     const confirmPasswordHandler = (e) => {
         setConfirmPassword(e.target.value);
         if (e.target.value !== password) {
@@ -84,8 +78,6 @@ const Form = () => {
             setConfirmPasswordErrors("")
         }
     }
-
-
 
     return (
         <div className="card mt-4">
